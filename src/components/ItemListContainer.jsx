@@ -1,16 +1,10 @@
 import { List, ListItem, ListItemText } from "@material-ui/core"
+import ItemList from "./ItemList"
 
 const ItemListContainer = ({ name, description }) => {
   return (
     <div>
-      <List dense={true}>
-        <ListItem>
-          <ListItemText 
-            primary={name}
-            secondary={description}
-          />
-        </ListItem>
-      </List>
+      <ItemList />
     </div>
   )
 }

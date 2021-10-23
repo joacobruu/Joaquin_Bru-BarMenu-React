@@ -17,7 +17,7 @@ const ItemCount = ({ name, description }) => {
 
   return (
     <div>
-      <Card>
+      <Card style={{width: "100%", display: "flex", justifyContent: "center"}}>
         <CardContent>
           <Typography variant="h5">
             {name}
