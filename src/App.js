@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <Container maxWidth="lg" style={{backgroundColor: "#030708", paddingTop: 30, paddingBottom: 30}}>
+      <Container maxWidth="100%" style={{backgroundColor: "#030708", paddingTop: 30, paddingBottom: 30}}>
         <ItemListContainer />
       </Container>
     </>

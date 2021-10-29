@@ -31,7 +31,7 @@ const ItemList = () => {
 
   return (
     <div className={classes.container}>
-      { loading ? <CircularProgress /> : productos.labiales.map((producto) => <Item key={producto.id} img={producto.img} title={producto.marca} genre={producto.precio} />)}
+      { loading ? <CircularProgress /> : productos.labiales.map((producto) => <Item key={producto.id} img={producto.img} marca={producto.marca} precio={producto.precio} nombre={producto.nombre} />)}
     </div>
   )
 }

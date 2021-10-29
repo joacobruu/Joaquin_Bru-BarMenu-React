@@ -1,50 +1,33 @@
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@material-ui/core"
+import { Card, CardContent, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
-import ItemCount from "./ItemCount"
 
 const useStyles = makeStyles({
-  card: {
-    width: 250,
-    height: 350,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
-
-  media: {
-    top: 20,
-    height: 200,
-    objectFit: 'cover',
-    scale: 0.3
-  },
-
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
+  imgDiv: {
+    height: 300,
+    width: 300
   }
 })
 
-const Item = ({ img, title, genre }) => {
+const Item = ({ img, marca, precio, nombre }) => {
   const classes = useStyles()
 
   return (
     <div>
-      <Card className={classes.card}>
-        <CardActionArea className={classes.cardActionmedia}>
-          <CardMedia className={classes.media}
-            image={img}
-            title={title}
-          />
-          <CardContent>
-            <Typography className={classes.title} variant="h4" component="p">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {genre}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <ItemCount />
+      <Card>
+        <CardContent>
+          <div className={classes.imgDiv}>
+            <img style={{width:'100%', height:'100%'}} src={img} alt={nombre}/>
+          </div>
+          <Typography variant='h5' component='p'>
+            {marca}
+          </Typography>
+          <Typography component='p'>
+            {nombre}
+          </Typography>
+          <Typography component='p'>
+            {'$' + precio}
+          </Typography>
+        </CardContent>
       </Card>
     </div>
   )
