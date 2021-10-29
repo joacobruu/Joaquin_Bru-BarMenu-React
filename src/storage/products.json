@@ -1,0 +1,233 @@
+{
+    "labiales": [
+      {
+        "id": 1,
+        "marca": "Natasha Denona",
+        "nombre": "Lip Oh-Phoria - Chestnut",
+        "descripcion": "Un bálsamo labial extra para calmar, refrescar y volver a despertar labios secos y agrietados.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Chesnut.jpg",
+        "precio": 3900,
+        "stock": 10
+      },
+      {
+        "id": 2,
+        "marca": "Natasha Denona",
+        "nombre": "Lip Oh-Phoria - Caramel",
+        "descripcion": "Un bálsamo labial extra para calmar, refrescar y volver a despertar labios secos y agrietados.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Caramel.jpg",
+        "precio": 3900,
+        "stock": 5
+      },
+      {
+        "id": 3,
+        "marca": "Natasha Denona",
+        "nombre": "Lip Oh-Phoria - Tan Nude",
+        "descripcion": "Un bálsamo labial extra para calmar, refrescar y volver a despertar labios secos y agrietados.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Tan_Nude.jpg",
+        "precio": 3900,
+        "stock": 3
+      },
+      {
+        "id": 4,
+        "marca": "Natasha Denona",
+        "nombre": "Lip Oh-Phoria - Duo Chrome Coral",
+        "descripcion": "Un bálsamo labial extra para calmar, refrescar y volver a despertar labios secos y agrietados.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Coral(12).jpg",
+        "precio": 3900,
+        "stock": 15
+      },
+      {
+        "id": 5,
+        "marca": "Maybelline",
+        "nombre": "SUPERSTAY",
+        "descripcion": "Labial matte líquido altamente pigmentado que dura hasta 16 hrs, ahora en tonos rojizos para un look más hot.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/latam/argentina/maquillaje-labios/labiales-spiced-edition/individualist/maybelline-superstay-matte-ink-spiced-edition-320-individualist-041554589481-primary.jpg?thn=0&w=380&hash=555BDD81446C0E082190747B768F39CC79007444",
+        "precio": 1300,
+        "stock": 19
+      },
+      {
+        "id": 6,
+        "marca": "Maybelline",
+        "nombre": "SUPERSTAY",
+        "descripcion": "Labial líquido e intransferible de larga duración con acabado matte, ahora en tonos nudes.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/latam/argentina/maquillaje-labios/matte-ink-liquid-nudes/driver05.png?thn=0&w=380&hash=8E03F7EBAB3BCC130A5EF2388B251A8A0370A5BC",
+        "precio": 1300,
+        "stock": 20
+      },
+      {
+        "id": 7,
+        "marca": "Maybelline",
+        "nombre": "Color Sensational",
+        "descripcion": "Nuevos labiales en tonos atrevidos, con acabado hsta 2 veces más matte.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/global/lips-makeup/lip-color/color-sensational-powder-matte-lipstick/maybelline-lipstick-color-sensational-powder-matte-cruel-ruby-041554543124-o.jpg?thn=0&w=380&hash=A132B2CEBD962C23D46534BA1497925FA6CF128B",
+        "precio": 1000,
+        "stock": 2
+      },
+      {
+        "id": 8,
+        "marca": "Maybelline",
+        "nombre": "Color Sensational",
+        "descripcion": "Nuevos labiales en tonos atrevidos, con acabado hsta 2 veces más matte.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/global/lips-makeup/lip-color/color-sensational-powder-matte-lipstick/maybelline-lipstick-color-sensational-powder-matte-green-savage-041554543216-o.jpg?thn=0&w=380&hash=34BCF2157979633371CA39D03280355A33EF07D8",
+        "precio": 1000,
+        "stock": 7
+      },
+      {
+        "id": 9,
+        "marca": "Maybelline",
+        "nombre": "Color Sensational",
+        "descripcion": "Nuevos labiales en tonos atrevidos, con acabado hsta 2 veces más matte.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/global/lips-makeup/lip-color/color-sensational-powder-matte-lipstick/maybelline-lipstick-color-sensational-powder-matte-nocturnal-rose-041554543186-o.jpg?thn=0&w=380&hash=C8C4B74A0447AAA5DC945C71015AF9B9A1C08286",
+        "precio": 1000,
+        "stock": 8
+      },
+      {
+        "id": 10,
+        "marca": "Maybelline",
+        "nombre": "Color Sensational",
+        "descripcion": "Nuevos labiales en tonos atrevidos, con acabado hsta 2 veces más matte.",
+        "img": "https://www.maybelline.com.ar/~/media/mny/global/lips-makeup/lip-color/color-sensational-powder-matte-lipstick/maybelline-lipstick-color-sensational-powder-matte-nocturnal-rose-041554543186-o.jpg?thn=0&w=380&hash=C8C4B74A0447AAA5DC945C71015AF9B9A1C08286",
+        "precio": 1000,
+        "stock": 8
+      }
+    ],
+    "paletas": [
+      {
+        "id": 20,
+        "marca": "Urban Decay",
+        "nombre": "NAKED",
+        "descripcion": "Naked wild west paleta de sombra de ojos",
+        "img": "https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-master-catalog/default/dwfec4de42/ProductImages/Palettes/Naked%20Wild%20West/Urban%20Decay_Naked%20Wild%20West%20Eyeshadow%20Palette_Open%20Front%20with%20Swatches_3605972547644_Front.jpg?sw=362&sfrm=jpg&q=70",
+        "precio": 9500,
+        "stock": 5
+      },
+      {
+        "id": 21,
+        "marca": "Urban Decay",
+        "nombre": "NAKED",
+        "descripcion": "NAKED3 mini paleta de sombra de ojos",
+        "img": "https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-master-catalog/default/dw05afe83b/ProductImages/Palettes/Naked3%20Mini/Naked3mini_PACKSHOT%20+%20PIANO%20KEYS.jpg?sw=362&sfrm=jpg&q=70",
+        "precio": 9500,
+        "stock": 7
+      },
+      {
+        "id": 22,
+        "marca": "Urban Decay",
+        "nombre": "UD x Marvel Studio Eternals Vault",
+        "descripcion": "Esta colección de maquillaje ultra coleccionable incluye la paleta de sombras de ojos de edición limitada y cuatro lápices de ojos Glide-On 24/7",
+        "img": "https://www.urbandecay.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-urbandecay-master-catalog/default/dwb759062e/ProductImages/Palettes/ud1097/URBAN-DECAY-MARVEL-COLLECTION-VAULT-000-3605972419088-COLLECTION-OPEN.jpg?sw=362&sfrm=jpg&q=70",
+        "precio": 58000,
+        "stock": 2
+      },
+      {
+        "id": 23,
+        "marca": "Natasha Denona",
+        "nombre": "Retro Eyeshadow Palette",
+        "descripcion": "Proporciona la máxima recompensa de color con un mínimo esfuerzo, mezclándose a la perfección para lograr colores vibrantes.",
+        "img": "https://www.natashadenona.com/Media/Uploads/2-1_0001_M16_189194-2.jpg",
+        "precio": 12000,
+        "stock": 2
+      },
+      {
+        "id": 24,
+        "marca": "Natasha Denona",
+        "nombre": "Zendo Eyeshadow Palette",
+        "descripcion": "Proporciona la máxima recompensa de color con un mínimo esfuerzo, mezclándose a la perfección para lograr colores vibrantes.",
+        "img": "https://www.natashadenona.com/Media/Uploads/1-Product_Zendo_packshot.jpg",
+        "precio": 12000,
+        "stock": 3
+      },
+      {
+        "id": 25,
+        "marca": "MAC",
+        "nombre": "Art Library: Nude Model",
+        "descripcion": "Una paleta de ojos desarrollada por M ∙ A ∙ C Pro Artists en 12 tonos neutros intensamente pigmentados.",
+        "img": "https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_SGF701_640x600_1.jpg",
+        "precio": 8800,
+        "stock": 1
+      },
+      {
+        "id": 25,
+        "marca": "MAC",
+        "nombre": "Eyeshadow x Cruella",
+        "descripcion": "Paleta de sombra de ojos inspirada en la pelicula Creulla de Disney, edicion limitada",
+        "img": "https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_SN4901_640x600_1.jpg",
+        "precio": 8800,
+        "stock": 1
+      }
+    ],
+    "delineadores": [
+      {
+        "id": 30,
+        "marca": "Natasha Denona",
+        "nombre": "Macro Tech Eye-Crayon Burgundy",
+        "descripcion": "Un delineador de ojos cremoso en un crayón que ofrece un efecto negro completo e inmediato en una sola pasada.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Macro-tech-eye-crayon-burgundy-vegan-1_3.jpg",
+        "precio": 4000,
+        "stock": 23
+      },
+      {
+        "id": 31,
+        "marca": "Natasha Denona",
+        "nombre": "Macro Tech Eye-Crayon Brown",
+        "descripcion": "Un delineador de ojos cremoso en un crayón que ofrece un efecto negro completo e inmediato en una sola pasada.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Macro-tech-eye-crayon-brown-vegan-1_2.jpg",
+        "precio": 4000,
+        "stock": 23
+      },
+      {
+        "id": 32,
+        "marca": "Natasha Denona",
+        "nombre": "Macro Tech Eye-Crayon Black",
+        "descripcion": "Un delineador de ojos cremoso en un crayón que ofrece un efecto negro completo e inmediato en una sola pasada.",
+        "img": "https://www.natashadenona.com/Media/Uploads/Macro-tech-eye-crayon-black-vegan_3.jpg",
+        "precio": 4000,
+        "stock": 23
+      },
+      {
+        "id": 32,
+        "marca": "MAC",
+        "nombre": "Eye Kohl",
+        "descripcion": "Fórmula sedosa, color intenso, acabado mate / perlado",
+        "img": "https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_M1XG03_640x600_0.jpg",
+        "precio": 3000,
+        "stock": 17
+      },
+      {
+        "id": 33,
+        "marca": "MAC",
+        "nombre": "Powerpoint Eye Pencil",
+        "descripcion": "Impermeable, de larga duración, acabado mate",
+        "img": "https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_M3RY09_640x600_0.jpg",
+        "precio": 3000,
+        "stock": 17
+      },
+      {
+        "id": 34,
+        "marca": "MAC",
+        "nombre": "Chromagraphic Pencil",
+        "descripcion": "Fórmula cremosa, color intenso, de larga duración",
+        "img": "https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_MFHG08_640x600_0.jpg",
+        "precio": 3000,
+        "stock": 17
+      },
+      {
+        "id": 35,
+        "marca": "Maybelline",
+        "nombre": "Master Precise Liquid Liner",
+        "descripcion": "Fórmula cremosa, color intenso, de larga duración",
+        "img": "https://www.maybelline.com.ar/~/media/mny/latam/argentina/maquillaje-ojos/delineadores/master-precise/master_precise.jpg?thn=0&w=380&hash=5BF7556CB7F0706DABE982722AA71079C03E0746",
+        "precio": 3000,
+        "stock": 17
+      },
+      {
+        "id": 35,
+        "marca": "Maybelline",
+        "nombre": "Master Precise Skinny Gel Pencil",
+        "descripcion": "Fórmula cremosa, color intenso, de larga duración",
+        "img": "https://www.maybelline.com.ar/~/media/mny/global/eye-makeup/eyeliner/master-precise-skinny-eyeliner/maybelline-eyeliner-master-precise-skinny-defining-black-041554460834-o.jpg?thn=0&w=380&hash=95F211F4C15A2751F5760C7B1D14B2B8827252BB",
+        "precio": 3000,
+        "stock": 17
+      }
+    ]
+}

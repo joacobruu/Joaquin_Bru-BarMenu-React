@@ -1,6 +1,6 @@
-export const getMovies = new Promise((res, rej) => {
-  const movies = require('./movies.json')
+export const getProductos = new Promise((res, rej) => {
+  const listaProductos = require('./products.json')
   setTimeout(() => {
-    res(movies)    
+    res(listaProductos)    
   }, 3000);
 })

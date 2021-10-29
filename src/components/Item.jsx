@@ -12,7 +12,10 @@ const useStyles = makeStyles({
   },
 
   media: {
-    height: 140,
+    top: 20,
+    height: 200,
+    objectFit: 'cover',
+    scale: 0.3
   },
 
   title: {

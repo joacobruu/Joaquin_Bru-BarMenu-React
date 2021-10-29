@@ -1,7 +1,7 @@
 import { CircularProgress } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import { useEffect, useState } from "react"
-import { getMovies } from "../storage/service"
+import { getProductos } from "../storage/service"
 import Item from "./Item"
 
 const useStyles = makeStyles({
@@ -15,12 +15,13 @@ const useStyles = makeStyles({
 })
 
 const ItemList = () => {
-  const [movies, setMovies] = useState([])
+  const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getMovies.then(res => {
-      setMovies(res)
+    getProductos.then(res => {
+      setProductos(res)
+      console.log(res)
     })
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
@@ -30,7 +31,7 @@ const ItemList = () => {
 
   return (
     <div className={classes.container}>
-      { loading ? <CircularProgress /> : movies.map((movie) => <Item key={movie.id} img={movie.img} title={movie.title} genre={movie.genre} />)}
+      { loading ? <CircularProgress /> : productos.labiales.map((producto) => <Item key={producto.id} img={producto.img} title={producto.marca} genre={producto.precio} />)}
     </div>
   )
 }
