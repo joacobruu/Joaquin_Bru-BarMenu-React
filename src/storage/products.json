@@ -147,7 +147,7 @@
         "stock": 1
       },
       {
-        "id": 25,
+        "id": 26,
         "marca": "MAC",
         "nombre": "Eyeshadow x Cruella",
         "descripcion": "Paleta de sombra de ojos inspirada en la pelicula Creulla de Disney, edicion limitada",
@@ -185,7 +185,7 @@
         "stock": 23
       },
       {
-        "id": 32,
+        "id": 33,
         "marca": "MAC",
         "nombre": "Eye Kohl",
         "descripcion": "Fórmula sedosa, color intenso, acabado mate / perlado",
@@ -194,7 +194,7 @@
         "stock": 17
       },
       {
-        "id": 33,
+        "id": 34,
         "marca": "MAC",
         "nombre": "Powerpoint Eye Pencil",
         "descripcion": "Impermeable, de larga duración, acabado mate",
@@ -203,7 +203,7 @@
         "stock": 17
       },
       {
-        "id": 34,
+        "id": 35,
         "marca": "MAC",
         "nombre": "Chromagraphic Pencil",
         "descripcion": "Fórmula cremosa, color intenso, de larga duración",
@@ -212,7 +212,7 @@
         "stock": 17
       },
       {
-        "id": 35,
+        "id": 36,
         "marca": "Maybelline",
         "nombre": "Master Precise Liquid Liner",
         "descripcion": "Fórmula cremosa, color intenso, de larga duración",
@@ -221,7 +221,7 @@
         "stock": 17
       },
       {
-        "id": 35,
+        "id": 37,
         "marca": "Maybelline",
         "nombre": "Master Precise Skinny Gel Pencil",
         "descripcion": "Fórmula cremosa, color intenso, de larga duración",
