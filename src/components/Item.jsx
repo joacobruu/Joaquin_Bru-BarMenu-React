@@ -6,6 +6,10 @@ const useStyles = makeStyles({
   imgDiv: {
     height: 300,
     width: 300
+  },
+
+  links: {
+    textDecoration: 'none'
   }
 })
 
@@ -14,7 +18,7 @@ const Item = ({ img, marca, precio, nombre, id }) => {
 
   return (
     <div>
-      <Link to={'/detalle/' + id}>
+      <Link className={classes.links} to={'/detalle/' + id}>
         <Card>
           <CardContent>
             <div className={classes.imgDiv}>

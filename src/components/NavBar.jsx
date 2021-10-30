@@ -8,10 +8,18 @@ const useStyles = makeStyles({
     justifyContent: 'space-between'
   },
 
-  links:{
+  linksContainer:{
     display: 'flex',
     width: '40%',
     justifyContent: 'space-evenly'
+  },
+
+  links:{
+    color: '#fff',
+    textDecoration: 'none',
+    '$:visited':{
+      color: '#fff'
+    }
   }
 })
 
@@ -24,20 +32,20 @@ const NavBar = () => {
       <AppBar position='static'>
         <Toolbar className={classes.toolBar}>
           <Typography variant='h1' style={{fontSize:'1.5rem', fontWeight:'bold'}}>
-            <NavLink to='/'>MAKE-UP</NavLink>
+            <NavLink className={classes.links} exact to='/'>MAKE-UP</NavLink>
           </Typography>
-          <div className={classes.links}>            
+          <div className={classes.linksContainer}>            
             <Typography>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to='/'>Home</NavLink>
             </Typography>
             <Typography>
-              <NavLink to={'/categoria/paletas'}>Paletas</NavLink>
+              <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to={'/categoria/paletas'}>Paletas</NavLink>
             </Typography>
             <Typography>
-              <NavLink to='/categoria/labiales'>Labiales</NavLink>
+              <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to='/categoria/labiales'>Labiales</NavLink>
             </Typography>
             <Typography>
-              <NavLink to='/categoria/delineadores'>Delineadores</NavLink>
+              <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to='/categoria/delineadores'>Delineadores</NavLink>
             </Typography>
           </div>          
           <CartWidget badgeTotal="3"/>
