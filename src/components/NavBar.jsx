@@ -1,4 +1,5 @@
-import { AppBar, Link, makeStyles, Toolbar, Typography } from "@material-ui/core"
+import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core"
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const useStyles = makeStyles({
@@ -23,18 +24,21 @@ const NavBar = () => {
       <AppBar position='static'>
         <Toolbar className={classes.toolBar}>
           <Typography variant='h1' style={{fontSize:'1.5rem', fontWeight:'bold'}}>
-            MAKE-UP
+            <NavLink to='/'>MAKE-UP</NavLink>
           </Typography>
-          <div className={classes.links}>
-            <Link href='#' color="inherit">
-              Paletas
-            </Link>
-            <Link href='#' color="inherit">
-              Labiales
-            </Link>
-            <Link href='#' color="inherit">
-              Delineadores
-            </Link>
+          <div className={classes.links}>            
+            <Typography>
+              <NavLink to='/'>Home</NavLink>
+            </Typography>
+            <Typography>
+              <NavLink to={'/categoria/paletas'}>Paletas</NavLink>
+            </Typography>
+            <Typography>
+              <NavLink to='/categoria/labiales'>Labiales</NavLink>
+            </Typography>
+            <Typography>
+              <NavLink to='/categoria/delineadores'>Delineadores</NavLink>
+            </Typography>
           </div>          
           <CartWidget badgeTotal="3"/>
         </Toolbar>

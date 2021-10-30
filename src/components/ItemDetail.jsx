@@ -33,32 +33,22 @@ const useStyles = makeStyles({
   }
 })
 
-const itemMock = {
-  "id": 1,
-  "marca": "Natasha Denona",
-  "nombre": "Lip Oh-Phoria - Chestnut",
-  "descripcion": "Un bálsamo labial extra para calmar, refrescar y volver a despertar labios secos y agrietados.",
-  "img": "https://www.natashadenona.com/Media/Uploads/Chesnut.jpg",
-  "precio": 3900,
-  "stock": 10
-}
-
-const ItemDetail = () => {
+const ItemDetail = ({img, marca, nombre, descripcion, precio}) => {
 
   const classes = useStyles()
-
+  
   return (
     <div>
       <Card>
         <CardContent className={classes.cardContent}>
           <div>
-            <img src={itemMock.img} alt={itemMock.nombre} />
+            <img src={img} alt={nombre} />
           </div>
           <div>
-            <Typography component='h4' className={classes.titulo}>{itemMock.marca}</Typography>
-            <Typography component='p' className={classes.p + ' ' + classes.nombre}>{itemMock.nombre}</Typography>
-            <Typography component='p' className={classes.p}>{itemMock.descripcion}</Typography>
-            <Typography component='p' className={classes.p + ' ' + classes.precio}>{'$' + itemMock.precio}</Typography>
+            <Typography component='h4' className={classes.titulo}>{marca}</Typography>
+            <Typography component='p' className={`${classes.p} ${classes.nombre}`}>{nombre}</Typography>
+            <Typography component='p' className={classes.p}>{descripcion}</Typography>
+            <Typography component='p' className={`${classes.p} ${classes.precio}`}>{'$' + precio}</Typography>
             <div>
               <Button className={classes.btn} variant='contained' color='primary'>Comprar</Button>
               <Button variant='contained'>Volver</Button>
