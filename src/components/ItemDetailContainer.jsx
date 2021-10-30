@@ -14,10 +14,8 @@ const ItemDetailContainer = () => {
       const lista = [...res.labiales, ...res.delineadores, ...res.paletas]
       for(const item of lista){
         if(item.id === parseInt(idProducto)){
-          setTimeout(() => {
             setProducto([item])
             console.log(item);
-          }, 2000)
         }
       }
     })
@@ -26,7 +24,7 @@ const ItemDetailContainer = () => {
   }, [idProducto])  
 
   return (
-    <div style={{width: '70%'}}>
+    <div style={{width: '70%', minHeight:'100vh'}}>
       {loading ? <CircularProgress /> : producto.map((item) => <ItemDetail img={item.img} nombre={item.nombre} marca={item.marca} descripcion={item.descripcion} precio={item.precio}/>)}
     </div>
   )
