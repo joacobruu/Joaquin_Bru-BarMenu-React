@@ -9,4 +9,4 @@ Pagina Web creada con React y React Router
 
 ## Demo
 
-![MakeUp Web App]('./demo/demoGif.gif')
+![MakeUp Web App](demo/demoGif.gif)
