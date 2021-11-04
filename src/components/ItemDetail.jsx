@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
+import { useCartContext } from "../context/CartContext"
 
 const useStyles = makeStyles({
   cardContent:{
@@ -36,7 +37,11 @@ const useStyles = makeStyles({
 const ItemDetail = ({img, marca, nombre, descripcion, precio}) => {
 
   const classes = useStyles()
-  
+
+  const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+  console.log(cartList);
+  console.log(mostrarListado());
+
   return (
     <div>
       <Card>

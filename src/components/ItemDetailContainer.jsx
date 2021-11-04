@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div style={{width: '70%', minHeight:'100vh'}}>
-      {loading ? <CircularProgress /> : producto.map((item) => <ItemDetail img={item.img} nombre={item.nombre} marca={item.marca} descripcion={item.descripcion} precio={item.precio}/>)}
+      {loading ? <CircularProgress /> : producto.map((item) => <ItemDetail key={item.id} img={item.img} nombre={item.nombre} marca={item.marca} descripcion={item.descripcion} precio={item.precio}/>)}
     </div>
   )
 }
