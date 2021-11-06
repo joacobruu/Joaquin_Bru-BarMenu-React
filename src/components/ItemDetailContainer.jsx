@@ -13,12 +13,10 @@ const ItemDetailContainer = () => {
     getProductos.then(res => {
       const lista = [...res.labiales, ...res.delineadores, ...res.paletas]
       for(const item of lista){
-        setTimeout(() => {
-          if(item.id === parseInt(idProducto)){
-            setProducto([item])
-            console.log(item);
-          }
-        }, 2000)        
+        if(item.id === parseInt(idProducto)){
+          setProducto([item])
+          console.log(item);
+        }      
       }
     })
     .catch(err => console.log(err))

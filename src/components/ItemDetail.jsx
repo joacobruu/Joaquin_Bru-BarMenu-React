@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import { useCartContext } from "../context/CartContext"
+import ItemCount from "./ItemCount"
 
 const useStyles = makeStyles({
   cardContent:{
@@ -54,6 +55,7 @@ const ItemDetail = ({img, marca, nombre, descripcion, precio}) => {
             <Typography component='p' className={`${classes.p} ${classes.nombre}`}>{nombre}</Typography>
             <Typography component='p' className={classes.p}>{descripcion}</Typography>
             <Typography component='p' className={`${classes.p} ${classes.precio}`}>{'$' + precio}</Typography>
+            <ItemCount />
             <div>
               <Button className={classes.btn} variant='contained' color='primary'>Comprar</Button>
               <Button variant='contained'>Volver</Button>

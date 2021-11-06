@@ -1,11 +1,35 @@
-import { Card, CardContent, Typography, IconButton } from "@material-ui/core"
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import { useState } from "react";
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import { makeStyles, Typography } from "@material-ui/core";
 
-const ItemCount = ({ name, description }) => {
+const useStyles = makeStyles({
+  container: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '20%',
+    marginBottom: '1rem'
+  },
 
+  cant: {
+    fontSize: '1rem',
+  },
+
+  icon: {
+    color: '#3F51B5'
+  },
+
+  span: {
+    '&:hover': {
+      cursor: 'pointer'
+    }
+  }
+})
+
+const ItemCount = () => {
   const [count, setCount] = useState(1)
+
+  const classes = useStyles()
 
   const countSum = () => {
     setCount(count + 1)
@@ -16,26 +40,10 @@ const ItemCount = ({ name, description }) => {
   }
 
   return (
-    <div>
-      <Card style={{width: "100%", display: "flex", justifyContent: "center"}}>
-        <CardContent>
-          <Typography variant="h5">
-            {name}
-          </Typography>
-          <Typography variant="h6">
-            {description}
-          </Typography>
-          <div style={{display: "flex"}}>
-            <IconButton onClick={countRes} aria-label="delete" size="small">
-              <ArrowDownwardIcon fontSize="inherit" />
-            </IconButton>
-            <span>{count}</span>
-            <IconButton onClick={countSum} aria-label="delete" size="small">
-              <ArrowUpwardIcon fontSize="inherit" />
-            </IconButton>
-          </div>          
-        </CardContent>
-      </Card>
+    <div className={classes.container}>
+      <span className={classes.span} onClick={() => countRes()}><RemoveIcon className={classes.icon} /></span>
+      <Typography component= 'p' className={classes.cant}>{count}</Typography>
+      <span className={classes.span} onClick={() => countSum()}><AddIcon className={classes.icon} /></span>
     </div>
   )
 }
