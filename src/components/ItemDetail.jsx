@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { Button, Card, CardContent, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import { useCartContext } from "../context/CartContext"
@@ -6,7 +8,7 @@ import ItemCount from "./ItemCount"
 const useStyles = makeStyles({
   cardContent:{
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     height: '100vh'
   },
@@ -15,10 +17,13 @@ const useStyles = makeStyles({
     fontSize: '2.5rem'
   },
 
+  containerP: {
+    maxWidth: '50%'
+  },
+
   p:{
     marginTop: '1rem',
     fontSize: '1rem',
-    width: '50%'
   },
 
   nombre:{
@@ -30,14 +35,24 @@ const useStyles = makeStyles({
     marginBottom: '1rem'
   },
 
+  img: {
+    maxWidth: '300px'
+  },
+
   btn:{
     marginRight: '.5rem'
   }
 })
 
-const ItemDetail = ({img, marca, nombre, descripcion, precio}) => {
+const ItemDetail = ({img, marca, nombre, descripcion, precio, stock}) => {
+
+  const [inputType, setInputType] = useState('Agregar al Carrito')
 
   const classes = useStyles()
+
+  const handleInput = () => {
+    setInputType('Comprar')
+  }
 
   const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
   console.log(cartList);
@@ -47,18 +62,28 @@ const ItemDetail = ({img, marca, nombre, descripcion, precio}) => {
     <div>
       <Card>
         <CardContent className={classes.cardContent}>
-          <div>
-            <img src={img} alt={nombre} />
+          <div className={classes.img}>
+            <img src={img} alt={nombre} style={{width: '100%'}}/>
           </div>
-          <div>
+          <div className={classes.containerP}>
             <Typography component='h4' className={classes.titulo}>{marca}</Typography>
             <Typography component='p' className={`${classes.p} ${classes.nombre}`}>{nombre}</Typography>
             <Typography component='p' className={classes.p}>{descripcion}</Typography>
             <Typography component='p' className={`${classes.p} ${classes.precio}`}>{'$' + precio}</Typography>
-            <ItemCount />
+            <ItemCount initial={stock >= 1 ? 1 : 0} stock={stock}/>
+            <Typography component= 'p'>Disponible: {stock}</Typography>
             <div>
-              <Button className={classes.btn} variant='contained' color='primary'>Comprar</Button>
-              <Button variant='contained'>Volver</Button>
+              {
+                inputType === 'Agregar al Carrito' ?
+                  <Button className={classes.btn} onClick={() => handleInput()} variant='contained' color='primary'>Agregar al Carrito</Button> 
+                :
+                  <Link exact to='/cart'>
+                    <Button className={classes.btn} variant='contained' color='primary'>Terminar Compra</Button>
+                  </Link>
+              }
+              <Link exact to='/'>
+                <Button variant='contained'>Volver</Button>
+              </Link>              
             </div>
           </div>
         </CardContent>

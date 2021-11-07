@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 import { getProductos } from "../storage/service"
-import { CircularProgress } from "@material-ui/core"
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState([])
-  const [loading, setLoading] = useState(true)
   const { idProducto } = useParams()
 
   useEffect(() => {
@@ -20,12 +18,11 @@ const ItemDetailContainer = () => {
       }
     })
     .catch(err => console.log(err))
-    .finally(setLoading(false))
   }, [idProducto])  
 
   return (
     <div style={{width: '70%', minHeight:'100vh'}}>
-      {loading ? <CircularProgress /> : producto.map((item) => <ItemDetail key={item.id} img={item.img} nombre={item.nombre} marca={item.marca} descripcion={item.descripcion} precio={item.precio}/>)}
+      {producto.map((item) => <ItemDetail key={item.id} img={item.img} nombre={item.nombre} marca={item.marca} descripcion={item.descripcion} precio={item.precio} stock={item.stock}/>)}
     </div>
   )
 }

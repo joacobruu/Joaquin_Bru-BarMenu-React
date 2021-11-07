@@ -47,8 +47,8 @@ const NavBar = () => {
             <Typography>
               <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to='/categoria/delineadores'>Delineadores</NavLink>
             </Typography>
-          </div>          
-          <CartWidget badgeTotal="3"/>
+          </div>
+          <NavLink className={classes.links} exact to='/carrito'><CartWidget badgeTotal="3"/></NavLink>
         </Toolbar>
       </AppBar>
     </div>

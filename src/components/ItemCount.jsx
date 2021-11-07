@@ -26,13 +26,13 @@ const useStyles = makeStyles({
   }
 })
 
-const ItemCount = () => {
-  const [count, setCount] = useState(1)
+const ItemCount = ({ initial, stock }) => {
+  const [count, setCount] = useState(initial)
 
   const classes = useStyles()
 
   const countSum = () => {
-    setCount(count + 1)
+    if(count < stock ) setCount(count + 1)
   }
 
   const countRes = () => {
