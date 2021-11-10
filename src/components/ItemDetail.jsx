@@ -44,7 +44,7 @@ const ItemDetail = ({ producto }) => {
   const [count, setcount] = useState(0)
   const classes = useStyles()
 
-  const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+  const {cart, mostrarListado, agregarAlCarrito, removeItem} = useCartContext()
   // console.log(cartList);
   // console.log(mostrarListado);
 
@@ -53,7 +53,11 @@ const ItemDetail = ({ producto }) => {
     setcount(cant)
     agregarAlCarrito({producto, cantidad: cant})
   }
-  console.log(cartList);
+  console.log(cart);
+
+  const remove = (id) => {
+    removeItem(id)
+  }
 
   return (
     <div>
