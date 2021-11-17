@@ -1,6 +1,7 @@
 import { AppBar, makeStyles, Toolbar, Typography } from "@material-ui/core"
 import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
+import { useCartContext } from "../context/CartContext"
 
 const useStyles = makeStyles({
   toolBar:{
@@ -25,7 +26,9 @@ const useStyles = makeStyles({
 
 const NavBar = () => {
 
+  const { getCartTotal } = useCartContext()
   const classes = useStyles()
+  
 
   return (
     <div>
@@ -48,7 +51,7 @@ const NavBar = () => {
               <NavLink className={classes.links} activeStyle={{textDecoration:'underline'}} exact to='/categoria/delineadores'>Delineadores</NavLink>
             </Typography>
           </div>
-          <NavLink className={classes.links} exact to='/carrito'><CartWidget badgeTotal="3"/></NavLink>
+          <NavLink className={classes.links} exact to='/carrito'><CartWidget badgeTotal={getCartTotal()}/></NavLink>
         </Toolbar>
       </AppBar>
     </div>

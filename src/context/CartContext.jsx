@@ -7,15 +7,17 @@ const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([])
 
   const agregarAlCarrito = (items) => {
-    let enPedido = false
-    cart.forEach(item => {
-      if(item.producto.id === items.producto.id) {
-        item.cantidad += items.cantidad
-        enPedido = true
-      }
-    })
-    if(!enPedido) setCart([...cart, items])
-    console.log(cart);
+    if (items.cantidad > 0) {
+      let enPedido = false
+      cart.forEach(item => {
+        if (item.producto.id === items.producto.id) {
+          item.cantidad += items.cantidad
+          enPedido = true
+        }
+      })
+      if (!enPedido) setCart([...cart, items])
+      console.log(cart);
+    }
   }
 
   const removeItem = (id) => {
@@ -35,9 +37,13 @@ const CartContextProvider = ({ children }) => {
   const isInCart = (id) => {
     let inCart = false
     cart.forEach(item => {
-      if(item.producto.id === id) inCart = true
+      if (item.producto.id === id) inCart = true
     })
     return inCart
+  }
+
+  const getCartTotal = () => {
+    return cart.length
   }
 
   return (
@@ -45,7 +51,10 @@ const CartContextProvider = ({ children }) => {
       cart,
       mostrarListado,
       agregarAlCarrito,
-      removeItem
+      removeItem,
+      isInCart,
+      getCartTotal,
+      clear
     }}>
       {children}
     </CartContext.Provider>

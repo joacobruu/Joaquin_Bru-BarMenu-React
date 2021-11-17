@@ -74,7 +74,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
           inputType === 'Agregar al Carrito' ?
             <Button className={classes.btn} onClick={() => handleOnAdd()} variant='contained' color='primary'>Agregar al Carrito</Button>
             :
-            <Link exact to='/cart'>
+            <Link exact to='/carrito'>
               <Button className={classes.btn} variant='contained' color='primary'>Terminar Compra</Button>
             </Link>
         }
