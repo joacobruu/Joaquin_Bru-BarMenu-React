@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
-import { getProductos } from "../storage/service"
+import { getFirestore } from "../storage/getFirestore"
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
@@ -8,16 +8,12 @@ const ItemDetailContainer = () => {
   const { idProducto } = useParams()
 
   useEffect(() => {
-    getProductos.then(res => {
-      const lista = [...res.labiales, ...res.delineadores, ...res.paletas]
-      for(const item of lista){
-        if(item.id === parseInt(idProducto)){
-          setProducto([item])
-          console.log(item);
-        }      
-      }
-    })
-    .catch(err => console.log(err))
+    const db = getFirestore()
+    const dbQuery = db.collection('productos')
+    const item = dbQuery.doc(idProducto)
+
+    item.get()
+    .then(doc => setProducto([{ id: doc.id, ...doc.data() }]))
   }, [idProducto])  
 
   return (

@@ -2,7 +2,7 @@ import { CircularProgress } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { getProductos } from "../storage/service"
+import { getFirestore } from "../storage/getFirestore"
 import Item from "./Item"
 
 const useStyles = makeStyles({
@@ -25,17 +25,31 @@ const ItemList = () => {
   
 
   useEffect(() => {
-    getProductos.then(res => {
-      if (idCategoria === "labiales") setProductos([...res.labiales])
-      if (idCategoria === "paletas") setProductos([...res.paletas])
-      if (idCategoria === "delineadores") setProductos([...res.delineadores])
-      if (idCategoria === undefined || null) setProductos([...res.labiales, ...res.paletas, ...res.delineadores])
-    })
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+
+    const db = getFirestore()
+    
+      if (idCategoria === "labiales") {
+        const dbQuery = db.collection('productos').where('categoria', '==', 'labiales').get()
+        dbQuery.then(res => setProductos(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+      }
+      if (idCategoria === "paletas"){
+        const dbQuery = db.collection('productos').where('categoria', '==', 'paletas').get()
+        dbQuery.then(res => setProductos(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+      }
+      if (idCategoria === "delineadores"){
+        const dbQuery = db.collection('productos').where('categoria', '==', 'delineadores').get()
+        dbQuery.then(res => setProductos(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+      }
+      if (idCategoria === undefined || null){
+        const dbQuery = db.collection('productos').get()
+        dbQuery.then(res => setProductos(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+      }
   }, [idCategoria])
 
-  console.log(idCategoria);
+  console.log(productos);
 
   const classes = useStyles()
 
