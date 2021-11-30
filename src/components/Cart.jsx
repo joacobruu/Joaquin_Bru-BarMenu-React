@@ -2,6 +2,8 @@ import { Card, CardContent, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext"
 import CartItem from "./CartItem";
+import Form from "./Form";
+
 
 const Cart = () => {
   const {cart, removeItem, clear, getCartTotal, getTotalPrice} = useCartContext()
@@ -23,13 +25,14 @@ const Cart = () => {
                 <Typography variant='h5' component='p'>
                   {`Total: $${getTotalPrice()}`}
                 </Typography>
+                <Form cart={cart} total={getTotalPrice}/>
               </CardContent>
             </Card>
-          </div>            
+          </div>
         :
           <Link exact to="/"><span style={{color: "white"}}>INICIO</span></Link>
       }
-      <span style={{color: "white"}} onClick={() => clear()}>CLEAR</span>
+      <span style={{color: "white"}} onClick={() => clear()}>Vaciar Carrito</span>
     </div>
   )
 }
