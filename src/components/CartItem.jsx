@@ -1,6 +1,5 @@
 import { Card, CardContent, makeStyles, Typography } from "@material-ui/core"
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { useCartContext } from "../context/CartContext"
 
 const useStyles = makeStyles({
   container: {
@@ -22,8 +21,6 @@ const useStyles = makeStyles({
 })
 
 function CartItem({ producto, cantidad, remove }) {
-
-  const { removeItem } = useCartContext()
 
   const classes = useStyles()
 

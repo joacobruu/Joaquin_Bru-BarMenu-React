@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Card, CardContent, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import { useCartContext } from "../context/CartContext"
@@ -41,23 +40,14 @@ const useStyles = makeStyles({
 
 const ItemDetail = ({ producto }) => {
 
-  const [count, setcount] = useState(0)
   const classes = useStyles()
 
-  const {cart, mostrarListado, agregarAlCarrito, removeItem} = useCartContext()
-  // console.log(cartList);
-  // console.log(mostrarListado);
+  const {cart,  agregarAlCarrito} = useCartContext()
 
   const onAdd = (cant) => {
-    console.log(cant);
-    setcount(cant)
     agregarAlCarrito({producto, cantidad: cant})
   }
   console.log(cart);
-
-  const remove = (id) => {
-    removeItem(id)
-  }
 
   return (
     <div>

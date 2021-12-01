@@ -4,67 +4,80 @@ import { getFirestore } from '../storage/getFirestore'
 
 const Form = ({ cart, total }) => {
   const [open, setOpen] = useState(false)
-  const [nombre, setNombre] = useState('')
-  const [apellido, setApellido] = useState('')
-  const [telefono, setTelefono] = useState('')
-  const [email, setEmail] = useState('')
-  const [checkEmail, setCheckEmail] = useState('')
-  const [direccion, setDireccion] = useState('')
+  const [form, setForm] = useState({
+    nombre: '',
+    telefono: '',
+    email: '',
+    checkEmail: '',
+    direccion: '',
+  })
 
   const handleOpen = () => {
     setOpen(true)
-  }
-
-
-  const validateEmail = () => {
-    if (email != checkEmail) return alert('El Email debe coincidir!')
   }
 
   const handleClose = () => {
     setOpen(false)
   }
 
-  
+  const validateForm = () => {
+    for (const key in form) {
+      if (form[key] === '') {
+        return false
+      }
+    }
+    return true
+  }
+
+  const validateEmail = () => {
+    if (form.email === form.checkEmail) return true
+    return false
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    validateEmail()
-    let pedido = {}
+    if (validateForm()) {
+      if (validateEmail()) {
+        let pedido = {}
 
-    let userInfo = {
-      nombre: nombre,
-      apellido: apellido,
-      telefono: telefono,
-      email: email,
-      direccion: direccion
+        pedido.buyer = form
+        pedido.total = total()
+        pedido.fecha = new Date()
+        pedido.items = cart.map(item => {
+          const id = item.producto.id;
+          const nombre = item.producto.nombre;
+          const cantidad = item.cantidad;
+          const precio = item.producto.precio * item.cantidad;
+
+          return { id, nombre, cantidad, precio }
+        })
+
+        console.log(pedido);
+
+
+        const db = getFirestore()
+        db.collection('orders').add(pedido)
+          .then(res => alert(`Compra exitosa, su id de seguimiento es: ${res.id}`))
+
+        handleClose()
+      } else {
+        alert('El email debe coincidir')
+      }
+    } else {
+      alert('Complete todos los campos')
     }
 
-    pedido.buyer = userInfo
-    pedido.total = total()
-    pedido.items = cart.map(item => {
-      const id = item.producto.id;
-      const nombre = item.producto.nombre;
-      const precio = item.producto.precio * item.cantidad;
 
-      return {id, nombre, precio}
-    })
-
-    console.log(pedido);
-    
-
-    const db = getFirestore()
-    db.collection('orders').add(pedido)
-    .then(res => console.log(res))
   }
 
   return (
     <div>
-    <Button variant="contained" color="primary" onClick={handleOpen}>
-      Comprar
-    </Button>
-    <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-      <DialogTitle id="form-dialog-title">Terminar compra</DialogTitle>
-      <DialogContent>
+      <Button variant="contained" color="primary" onClick={handleOpen}>
+        Comprar
+      </Button>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Terminar compra</DialogTitle>
+        <DialogContent>
           {
             cart.map((item) => <DialogContentText key={item.producto.id}>{`${item.producto.nombre} x${item.cantidad} $${item.producto.precio * item.cantidad}`}</DialogContentText>)
           }
@@ -72,65 +85,57 @@ const Form = ({ cart, total }) => {
             {`Total: $${total()}`}
           </DialogContentText>
           <TextField
-          autoFocus
-          margin="dense"
-          id="nombre"
-          label="Nombre"
-          type="text"
-          onChange={(e) => {setNombre(e.target.value)}}
-          fullWidth
-        />
-        <TextField
-          margin="dense"
-          id="apellido"
-          label="Apellido"
-          type="text"
-          onChange={(e) => {setApellido(e.target.value)}}
-          fullWidth
-        />
-        <TextField
-          margin="dense"
-          id="telefono"
-          label="Telefono"
-          type="number"
-          onChange={(e) => {setTelefono(e.target.value)}}
-          fullWidth
-        />
-        <TextField
-          margin="dense"
-          id="email"
-          label="Email"
-          type="email"
-          onChange={(e) => {setEmail(e.target.value)}}
-          fullWidth
-        />
-        <TextField
-          margin="dense"
-          id="emailConfirm"
-          label="Reperir Email"
-          type="email"
-          onChange={(e) => {setCheckEmail(e.target.value)}}
-          fullWidth
-        />
-        <TextField
-          margin="dense"
-          id="direccion"
-          label="Direccion"
-          type="text"
-          onChange={(e) => {setDireccion(e.target.value)}}
-          fullWidth
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose} color="primary">
-          Cancelar
-        </Button>
-        <Button onClick={handleSubmit} variant='contained' color="primary">
-          Comprar
-        </Button>
-      </DialogActions>
-    </Dialog>
-  </div>
+            autoFocus
+            margin="dense"
+            id="nombre"
+            label="Nombre"
+            type="text"
+            onChange={(e) => { setForm(prevForm => ({ ...prevForm, nombre: e.target.value })) }}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="telefono"
+            label="Telefono"
+            type="number"
+            onChange={(e) => { setForm(prevForm => ({ ...prevForm, telefono: e.target.value })) }}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="email"
+            label="Email"
+            type="email"
+            onChange={(e) => { setForm(prevForm => ({ ...prevForm, email: e.target.value })) }}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="emailConfirm"
+            label="Reperir Email"
+            type="email"
+            onChange={(e) => { setForm(prevForm => ({ ...prevForm, checkEmail: e.target.value })) }}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="direccion"
+            label="Direccion"
+            type="text"
+            onChange={(e) => { setForm(prevForm => ({ ...prevForm, direccion: e.target.value })) }}
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancelar
+          </Button>
+          <Button onClick={handleSubmit} variant='contained' color="primary">
+            Comprar
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   )
 }
 
